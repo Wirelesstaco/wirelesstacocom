@@ -2,48 +2,90 @@
 
 html {
     box-sizing: border-box;
-    font-family: fantasy;
+    font-family: 'Poppins', sans-serif;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
+    
 }
+
+:root {
+    --purple: #351330;
+    --red: #CC2A41;
+    --tan: #E8CAA4;
+    --navy: #424254;
+    --teal: #64908A; 
+    --pcolor: #fff;
+
+    --h1:30px;
+
+
+}   
 
 body {
     margin: 0;
+    color:var(--pcolor);
 }
 #header-banner{
     width:100%;
     position: relative;
+    font-weight: bold;
+ 
 }
 .content {
     width: 100%;
     height: 100vh;
-    background: yellow;
     display: grid;
-    grid-template-rows: 100vh 600px 80px;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+    "header header header header"
+    "fullbar fullbar fullbar fullbar"
+    "aside aside main main"
+    "project2 project2 aside2 aside2"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:100vh 200px 500px 500px 200px;
 }
 
 header {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-  
+    grid-area: header;
+    background:var(--navy);
 }
+.fullBar {
+    grid-area: fullbar;
+    background:var(--purple);
+    color:var(--tan);
 
+    font-size: var(--h1);
+    text-align: center;
+    padding:50px;
+}
 aside {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    background:#E8CAA4;
+    grid-area: aside;
+    background:var(--red);
 }
 
 main {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    background: #64908A;
+    grid-area: main;
+    background:var(--navy);
 }
+footer {
+    grid-area: footer;
+    background:var(--purple);
+}
+
+
+.project2 {
+    grid-area:project2;
+    background:var(--navy);
+}
+.aside2{
+    grid-area: aside2;
+    background:var(--teal);
+}
+
 
 .nameBlock {
     display: flex;
@@ -52,14 +94,15 @@ main {
 
 
     position: absolute;
-    color:#E8CAA4;
-    background:#CC2A41;
+    color:var(--tan);
+    background:var(--red);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 150px;
-    width:800px;
-    margin:auto;
+    font-size: 120px;
+
+    padding:10px 30px;
+    white-space: nowrap;
 
 }
