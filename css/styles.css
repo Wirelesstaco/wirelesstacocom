@@ -18,16 +18,39 @@ html {
     --tan: #E8CAA4;
     --navy: #424254;
     --teal: #64908A; 
-    --pcolor: #fff;
+    --white: #fff;
+    --transteal: #64908A60;
 
-    --h1:30px;
+    --altwhite: #F2EBE5;
+    --altblue: #647295;
+    --altpink:#d6b10a;
+    --altdark:#2B262d;
+    
+    --altlight:#E0E5E9;
+    --altyellow:#f3D849;
+    --altblue2:#0A62D0;
+    --altlightblue:#191718;
+    
+    --bwhite: #dedede;
+    --byellow:#d6b10a;
+    --bpink: #c00055;
+    --bblue:#01577a;
 
+    --p4-1: #e8e8e8;
+    --p4-2: #f05454;
+    --p4-3: #30475e;
+    --p4-4: #222831;
+
+    --h1:34px;
 
 }   
 
 body {
     margin: 0;
-    color:var(--pcolor);
+    color:var(--white);
+}
+img{
+    max-width: 100%;
 }
 #header-banner{
     width:100%;
@@ -42,25 +65,50 @@ body {
     grid-template-areas:
     "header header header header"
     "fullbar fullbar fullbar fullbar"
-    "aside aside main main"
-    "project2 project2 aside2 aside2"
+    "main main main main"
+    "project2 project2 project2 project2"
+    "project3 project3 project3 project3"
     "footer footer footer footer";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows:100vh 200px 500px 500px 200px;
+    grid-template-rows:100vh auto auto auto auto 200px;
+    
 }
 
 header {
     grid-area: header;
-    background:var(--navy);
-}
-.fullBar {
-    grid-area: fullbar;
     background:var(--purple);
-    color:var(--tan);
+}
+.nameBlock {
+    max-width: 100%;
+
+    position: absolute;
+    
+    color:var(--p4-4);
+    background:var(--p4-3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 8vw;
+    
+
+    padding:10px 30px;
+    white-space: nowrap;
+
+}
+.fullbar {
+    grid-area: fullbar;
+    background:var(--p4-1);
+    color:var(--p4-3);
 
     font-size: var(--h1);
+    
     text-align: center;
-    padding:50px;
+    padding:400px  0 400px;
+}
+.fullBar p {
+    max-width: 840px;
+    margin: 0 auto;
 }
 aside {
     grid-area: aside;
@@ -69,40 +117,73 @@ aside {
 
 main {
     grid-area: main;
-    background:var(--navy);
+    background:var(--p4-1);
 }
 footer {
     grid-area: footer;
-    background:var(--purple);
+    background:var(--p4-4);
 }
 
 
 .project2 {
     grid-area:project2;
-    background:var(--navy);
+    background:var(--p4-2);
+  
+}
+.project3 {
+    grid-area:project3;
+    background:var(--p4-3);
+  
+}
+.project2 div, .project3 div{
+    color:var(--p4-1);
 }
 .aside2{
     grid-area: aside2;
-    background:var(--teal);
-}
-
-
-.nameBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    position: absolute;
-    color:var(--tan);
-    background:var(--red);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 120px;
-
-    padding:10px 30px;
-    white-space: nowrap;
+    background:var(--byellow);
 
 }
+
+
+
+
+.inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    margin:0 30px;
+    padding:120px 0;
+    color:var(--p4-4);
+}
+.inner-grid > div {
+ 
+    font-size:20px;
+    padding: 100px;
+    height:auto;
+    border-radius:40px;
+  }
+.inner-grid  img {
+    border-radius: 50px;
+    
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+   * {
+    scrollbar-width: thin;
+    scrollbar-color:var(--p4-2) var(--p4-1) ;
+  }
+  
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background:var(--transteal);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--teal);
+    border-radius: 20px;
+    border: 3px solid var(--teal);
+  }

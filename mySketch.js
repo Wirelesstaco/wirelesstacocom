@@ -1,23 +1,29 @@
 var nodes = [];
-var nodeCount = 50;
-var maxDistance = 120;
-let colorSet = ['#351330','#424254','#64908A','#E8CAA4','#CC2A41']
+var nodeCount = 70;
+var maxDistance = 180;
+//let colorSet = ['#351330','#424254','#64908A','#E8CAA4','#CC2A41']
+
+
+let colorSet = ['#351330','#222831','#30475e','#e8e8e8','#f05454']
+
 let  fontsize = 140;
 
 var actualInnerWidth = document.getElementsByTagName('header')[0].clientWidth;
 let containerHeight = document.getElementsByTagName('header')[0].clientHeight;
 function setup() {
-  console.log(actualInnerWidth);
+ 
  let canvas = createCanvas(actualInnerWidth,  containerHeight);
   canvas.parent('header-banner');
   //Create nodes
   for(i =0; i<nodeCount; i++){
-    var b = new Ball(random(0,actualInnerWidth),random(0,containerHeight));
+    var b = new Ball(random(0,windowWidth),random(0,containerHeight));
     nodes.push(b);
   }
 }
 function windowResized(){
-  resizeCanvas(actualInnerWidth, containerHeight);
+  resizeCanvas(document.getElementsByTagName('header')[0].clientWidth,windowHeight);
+ 
+
 }
 
 function draw() {
