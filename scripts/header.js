@@ -21,8 +21,8 @@ function setup() {
   }
 }
 function windowResized(){
-  resizeCanvas(document.getElementsByTagName('header')[0].clientWidth,windowHeight);
- 
+  resizeCanvas(document.getElementById('fullbar').offsetWidth,windowHeight);
+ console.log(document.getElementsByClassName('fullbar')[0].offsetWidth);
 
 }
 
